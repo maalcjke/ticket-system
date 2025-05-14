@@ -1,6 +1,5 @@
 import * as tickets from '@status/queries/status.queries.js'
 import { db } from '@core/storage/index.js'
-import { TicketStatus } from '@core/enums.js'
 
 export const status = async (param: tickets.IStatusParams) => {
   return await tickets.status
