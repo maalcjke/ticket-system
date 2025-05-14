@@ -1,4 +1,4 @@
-/* @name resolve */
+/* @name status */
 UPDATE tickets
 SET
     status = :newStatus!::integer,
