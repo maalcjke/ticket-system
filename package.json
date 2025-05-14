@@ -1,0 +1,49 @@
+{
+  "name": "ticket-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "start:dev": "tsx ./src/index.ts",
+    "build": "tsc"
+  },
+  "author": "maalcjke",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "tsx": "^4.19.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "@pgtyped/cli": "^2.4.3",
+    "typescript": "^5.8.3",
+    "xo": "^0.60.0"
+  },
+  "xo": {
+    "prettier": true,
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "no-await-in-loop": "off",
+      "max-depth": "off",
+      "capitalized-comments": "off",
+      "unicorn/explicit-length-check": "off",
+      "@typescript-eslint/naming-convention": "off",
+      "no-warning-comments": "off",
+      "import/extensions": "off",
+      "complexity": "off"
+    }
+  },
+  "prettier": {
+    "prettier.printWidth": 120,
+    "useTabs": false,
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "arrowParens": "avoid"
+  }
+}
