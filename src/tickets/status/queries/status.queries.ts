@@ -32,3 +32,31 @@ const statusIR: any = {"usedParamSet":{"newStatus":true,"reason":true,"ticketId"
 export const status = new PreparedQuery<IStatusParams,IStatusResult>(statusIR);
 
 
+/** 'StatusAll' parameters type */
+export interface IStatusAllParams {
+  newStatus?: number | null | void;
+  oldStatus?: number | null | void;
+}
+
+/** 'StatusAll' return type */
+export type IStatusAllResult = void;
+
+/** 'StatusAll' query type */
+export interface IStatusAllQuery {
+  params: IStatusAllParams;
+  result: IStatusAllResult;
+}
+
+const statusAllIR: any = {"usedParamSet":{"newStatus":true,"oldStatus":true},"params":[{"name":"newStatus","required":false,"transform":{"type":"scalar"},"locs":[{"a":28,"b":37}]},{"name":"oldStatus","required":false,"transform":{"type":"scalar"},"locs":[{"a":54,"b":63}]}],"statement":"UPDATE tickets\nSET status = :newStatus\nWHERE status = :oldStatus"};
+
+/**
+ * Query generated from SQL:
+ * ```
+ * UPDATE tickets
+ * SET status = :newStatus
+ * WHERE status = :oldStatus
+ * ```
+ */
+export const statusAll = new PreparedQuery<IStatusAllParams,IStatusAllResult>(statusAllIR);
+
+
