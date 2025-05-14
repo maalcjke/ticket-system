@@ -2,7 +2,7 @@ import * as tickets from '@status/queries/status.queries.js'
 import { status } from '@status/status.js'
 import { TicketStatus } from '@core/enums.js'
 
-export const resolve = async (
+export const cancel = async (
   param: Omit<tickets.IStatusParams, 'newStatus'>,
 ) => {
   const { ticketId, reason = '' } = param
@@ -10,6 +10,6 @@ export const resolve = async (
   return await status({
     ticketId,
     reason,
-    newStatus: TicketStatus.COMPLETED,
+    newStatus: TicketStatus.CANCELLED,
   })
 }

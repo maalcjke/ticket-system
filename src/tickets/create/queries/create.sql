@@ -1,6 +1,3 @@
-/*
-    @name create
-    @param tickets -> ((status, title, body, reason)...)
-*/
+/* @name create */
 INSERT INTO tickets (status, title, body, reason)
-VALUES :tickets;
+VALUES (:status, :title, :body, :reason);

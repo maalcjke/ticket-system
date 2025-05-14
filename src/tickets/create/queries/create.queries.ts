@@ -3,12 +3,10 @@ import { PreparedQuery } from '@pgtyped/runtime';
 
 /** 'Create' parameters type */
 export interface ICreateParams {
-  tickets: readonly ({
-    status: number | null | void,
-    title: string | null | void,
-    body: string | null | void,
-    reason: string | null | void
-  })[];
+  body?: string | null | void;
+  reason?: string | null | void;
+  status?: number | null | void;
+  title?: string | null | void;
 }
 
 /** 'Create' return type */
@@ -20,13 +18,13 @@ export interface ICreateQuery {
   result: ICreateResult;
 }
 
-const createIR: any = {"usedParamSet":{"tickets":true},"params":[{"name":"tickets","required":false,"transform":{"type":"pick_array_spread","keys":[{"name":"status","required":false},{"name":"title","required":false},{"name":"body","required":false},{"name":"reason","required":false}]},"locs":[{"a":57,"b":64}]}],"statement":"INSERT INTO tickets (status, title, body, reason)\nVALUES :tickets"};
+const createIR: any = {"usedParamSet":{"status":true,"title":true,"body":true,"reason":true},"params":[{"name":"status","required":false,"transform":{"type":"scalar"},"locs":[{"a":58,"b":64}]},{"name":"title","required":false,"transform":{"type":"scalar"},"locs":[{"a":67,"b":72}]},{"name":"body","required":false,"transform":{"type":"scalar"},"locs":[{"a":75,"b":79}]},{"name":"reason","required":false,"transform":{"type":"scalar"},"locs":[{"a":82,"b":88}]}],"statement":"INSERT INTO tickets (status, title, body, reason)\nVALUES (:status, :title, :body, :reason)"};
 
 /**
  * Query generated from SQL:
  * ```
  * INSERT INTO tickets (status, title, body, reason)
- * VALUES :tickets
+ * VALUES (:status, :title, :body, :reason)
  * ```
  */
 export const create = new PreparedQuery<ICreateParams,ICreateResult>(createIR);
