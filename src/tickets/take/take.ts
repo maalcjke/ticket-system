@@ -7,14 +7,12 @@ export const take = async (
 ) => {
   const { ticketId } = param
 
-  return await tickets.status
-    .run(
-      {
-        ticketId,
-        newStatus: TicketStatus.PROGRESS,
-        reason: '',
-      },
-      db,
-    )
-    .catch(err => console.error(`Ticket take failed: ${err}`))
+  return await tickets.status.run(
+    {
+      ticketId,
+      newStatus: TicketStatus.PROGRESS,
+      reason: '',
+    },
+    db,
+  )
 }
