@@ -11,6 +11,8 @@
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
     "paths": {
       "@core/*": ["./src/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@schemas/*": ["./src/schemas/*"],
       "@status/*": ["./src/tickets/status/*"]
     }
   }
