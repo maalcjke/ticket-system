@@ -8,8 +8,8 @@ SELECT
     created_at,
     updated_at
 FROM tickets
-WHERE created_at >= :dateFrom::timestamp
-  AND created_at <= :dateTo::timestamp
+WHERE created_at >= to_timestamp(:dateFrom, 'DD.MM.YYYY')
+  AND created_at <= to_timestamp(:dateTo, 'DD.MM.YYYY') + INTERVAL '1 day' - INTERVAL '1 second'
 ORDER BY created_at DESC
 LIMIT :limit::int
 OFFSET :offset::int;
