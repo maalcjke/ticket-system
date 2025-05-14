@@ -1,5 +1,5 @@
 export * from './create/create.js'
 export * from './take/take.js'
-export * from './resolve.js'
+export * from './resolve/resolve.js'
 export * from './cancel.js'
 export * from './get.js'
